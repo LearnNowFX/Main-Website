@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App.tsx";
+import App from "./app.tsx";
 import ReactDOM from "react-dom/client";
 
 const container = document.getElementById("root") as HTMLElement;

@@ -1,7 +1,7 @@
 import { ROUTES } from "./routes/routes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const CLIENT_URL = import.meta.env.DOMAIN_URL || window.location.origin;
+const CLIENT_URL = import.meta.env.DOMAIN_URL;
 
 function App() {
   return (
