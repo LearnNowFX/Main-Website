@@ -4,6 +4,9 @@ import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "@mui/material";
 import DeviceContextProvider from "./context/device.context";
 import { MUI_OVERRIDES } from "./styles/mui-overrides.style";
+import { EnvironmentManager } from "./utilities/environment.utility";
+
+EnvironmentManager.validate();
 
 const container = document.getElementById("root") as HTMLElement;
 
