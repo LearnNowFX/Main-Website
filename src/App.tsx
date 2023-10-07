@@ -8,15 +8,15 @@ const CLIENT_URL = import.meta.env.DOMAIN_URL;
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter basename={CLIENT_URL}>
+        <Header />
         <Routes>
           {ROUTES.map(route => (
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 }

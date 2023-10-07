@@ -4,6 +4,7 @@ export const theme = {
     typography: {
       main: "#ffffff",
       faded: "#4d4f51",
+      hover: "#2a92e5",
     },
     footer: {
       main: "#0f1010",
