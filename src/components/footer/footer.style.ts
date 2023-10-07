@@ -15,7 +15,8 @@ export const useStyles = () =>
       backgroundColor: theme.palette.footer.main,
     },
     text: {
+      fontSize: "16px",
       fontWeight: 300,
-      color: theme.palette.typography.main,
+      color: theme.palette.typography.faded,
     },
   });

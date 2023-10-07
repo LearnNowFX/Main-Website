@@ -3,13 +3,18 @@ export const theme = {
     background: {},
     typography: {
       main: "#ffffff",
+      faded: "#4d4f51",
     },
     footer: {
       main: "#0f1010",
     },
     paper: {},
-    button: {},
-    icon: {},
+    button: {
+      icon: "#515151",
+    },
+    icon: {
+      main: "#ffffff",
+    },
   },
   typography: {
     font: "Oswald",

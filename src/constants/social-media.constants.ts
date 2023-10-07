@@ -5,21 +5,21 @@ export const SOCIAL_PLATFORMS: ISocialPlatform[] = [
   {
     icon: Email,
     label: "email",
-    link: import.meta.env.EMAIL_ADDRESS,
+    link: `mailto:${import.meta.env.VITE_EMAIL_ADDRESS}`,
   },
   {
     icon: YouTube,
     label: "YouTube",
-    link: import.meta.env.YOUTUBE_CHANNEL,
+    link: import.meta.env.VITE_YOUTUBE_CHANNEL,
   },
   {
     icon: Facebook,
     label: "Facebook",
-    link: import.meta.env.FACEBOOK_LINK,
+    link: import.meta.env.VITE_FACEBOOK_LINK,
   },
   {
     icon: Twitter,
     label: "Twitter",
-    link: import.meta.env.TWITTER_LINK,
+    link: import.meta.env.VITE_TWITTER_LINK,
   },
 ];
