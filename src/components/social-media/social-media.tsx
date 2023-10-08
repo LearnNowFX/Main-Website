@@ -1,7 +1,7 @@
-import { IconButton } from "@mui/material";
 import React from "react";
-import { SOCIAL_PLATFORMS } from "src/constants/social-media.constants";
+import { IconButton } from "@mui/material";
 import { useStyles } from "./social-media.style";
+import { SOCIAL_PLATFORMS } from "src/constants/social-media.constants";
 
 const SocialMedia = () => {
   const styles = useStyles();

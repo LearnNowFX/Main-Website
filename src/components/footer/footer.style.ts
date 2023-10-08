@@ -6,7 +6,6 @@ export const useStyles = () =>
     container: {
       display: "flex",
       flexWrap: "wrap",
-      flexBasis: "2600px",
       justifyContent: "space-around",
       flexDirection: "row",
       position: "fixed",
@@ -16,8 +15,15 @@ export const useStyles = () =>
       padding: "10px",
       backgroundColor: theme.palette.footer.main,
     },
+    logoContainer: {
+      padding: "10px",
+      width: "350px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
     textContainer: {
-      width: "300px",
+      width: "350px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -32,5 +38,9 @@ export const useStyles = () =>
       fontSize: "14px",
       fontWeight: 200,
       color: theme.palette.typography.faded,
+    },
+    socialContainer: {
+      padding: "15px",
+      width: "300px",
     },
   });
