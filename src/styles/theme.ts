@@ -22,6 +22,9 @@ export const theme = {
     border: {
       main: "#262b33",
     },
+    input: {
+      main: "#ffffff",
+    },
   },
   typography: {
     font: "Oswald",

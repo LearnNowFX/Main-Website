@@ -18,5 +18,13 @@ export const MUI_OVERRIDES = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.input.main,
+          borderRadius: "5px",
+        },
+      },
+    },
   },
 });
