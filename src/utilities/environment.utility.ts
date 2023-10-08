@@ -4,6 +4,7 @@ export class EnvironmentManager {
   private static schema = Joi.object({
     VITE_EMAIL_ADDRESS: Joi.string().required(),
     VITE_YOUTUBE_CHANNEL: Joi.string().required(),
+    VITE_STATIC_ASSETS_SERVER: Joi.string().required(),
   });
 
   public static async validate() {

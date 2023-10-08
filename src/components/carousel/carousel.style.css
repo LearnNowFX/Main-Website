@@ -1,0 +1,16 @@
+.swiper {
+  width: 50vw;
+  aspect-ratio: 16/9;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  object-fit: fill;
+  width: 100%;
+}
