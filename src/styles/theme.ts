@@ -5,6 +5,7 @@ export const theme = {
       main: "#ffffff",
       faded: "#4d4f51",
       hover: "#2a92e5",
+      active: "#2a92e5",
     },
     footer: {
       main: "#0f1010",

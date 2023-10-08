@@ -26,7 +26,7 @@ const DesktopMenu = () => {
           <Button
             key={page}
             onClick={() => goToPage(page)}
-            style={styles.button({ isActive: page === activePage })}>
+            sx={styles.button({ isActive: page === activePage })}>
             {page}
           </Button>
         );
