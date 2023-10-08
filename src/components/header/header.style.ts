@@ -1,4 +1,3 @@
-import { theme } from "src/styles/theme";
 import { createStyles } from "../../styles/create-styles";
 
 export const useStyles = () =>
@@ -19,63 +18,4 @@ export const useStyles = () =>
     logo: {
       height: "65px",
     },
-    menu: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-around",
-      minWidth: "300px",
-      width: "100%",
-      maxWidth: "600px",
-      margin: "10px 30px",
-    },
-    hamburger: {
-      fontSize: "35px",
-      color: theme.palette.icon.main,
-    },
-    hamburgerContainer: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      margin: "20px",
-    },
-    button: ({ isActive }) => ({
-      width: "100px",
-      height: "40px",
-      color: isActive ? theme.palette.typography.active : theme.palette.typography.main,
-      background: "linear-gradient(180deg,#181b1e,#262b33)",
-      borderWidth: "2px",
-      borderStyle: "solid",
-      borderImage: isActive
-        ? "linear-gradient(90deg,transparent,#064faa,transparent) 1"
-        : "linear-gradient(0deg,#16181e,#14171d,#16181e) 1",
-      margin: "0 5px",
-      borderRadius: 0,
-      "&:hover": {
-        color: theme.palette.typography.hover,
-      },
-    }),
-    drawer: {
-      borderTopLeftRadius: "25px",
-      borderTopRightRadius: "25px",
-      width: "100%",
-      minHeight: "200px",
-      boxShadow: "",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: theme.palette.background.main,
-    },
-    menuItem: {
-      width: "100%",
-      textAlign: "center",
-      fontSize: "20px",
-      height: "70px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      borderBottom: `2px solid ${theme.palette.border.main}`,
-    },
-    menuItemText: ({ isActive }) => ({
-      color: isActive ? theme.palette.typography.active : theme.palette.typography.main,
-    }),
   });
