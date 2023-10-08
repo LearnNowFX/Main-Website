@@ -11,19 +11,19 @@ export const ROUTES: IRoute[] = [
     element: <Home />,
   },
   {
-    path: "/home",
+    path: "/home/*",
     element: <Home />,
   },
   {
-    path: "/products",
+    path: "/products/*",
     element: <Products />,
   },
   {
-    path: "/tutorials",
+    path: "/tutorials/*",
     element: <Tutorials />,
   },
   {
-    path: "/blog",
+    path: "/blog/*",
     element: <Blog />,
   },
   {
