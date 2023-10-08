@@ -10,6 +10,8 @@ export const MUI_OVERRIDES = createTheme({
       styleOverrides: {
         root: {
           transition: "color 0.2s",
+          color: theme.palette.typography.main,
+          textTransform: "uppercase",
           "&:hover": {
             color: theme.palette.typography.hover,
           },

@@ -1,6 +1,8 @@
 export const theme = {
   palette: {
-    background: {},
+    background: {
+      main: "#0e0e10",
+    },
     typography: {
       main: "#ffffff",
       faded: "#4d4f51",
@@ -16,6 +18,9 @@ export const theme = {
     },
     icon: {
       main: "#ffffff",
+    },
+    border: {
+      main: "#262b33",
     },
   },
   typography: {
