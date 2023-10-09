@@ -1,7 +1,6 @@
-import { FC, useMemo } from "react";
 import { Typography } from "@mui/material";
 import { useStyles } from "./youtube-player.style";
-import { useDeviceContext } from "src/context/device.context";
+import { FC, useEffect, useRef, useState } from "react";
 import { VIDEO_ASPECT_RATIO } from "src/constants/media.constants";
 
 interface IYouTubePlayerProps {
@@ -12,22 +11,31 @@ interface IYouTubePlayerProps {
 
 const YouTubePlayer: FC<IYouTubePlayerProps> = ({ width, videoId, title }) => {
   const styles = useStyles();
-  const { width: deviceWidth } = useDeviceContext();
+  const ref = useRef<HTMLDivElement>(null);
+  const [parentWidth, setParentWidth] = useState(0);
 
-  const calculatedWidth = useMemo(() => {
-    return Math.min(width, deviceWidth * 0.7);
-  }, [width, deviceWidth]);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (ref.current?.clientWidth) {
+        setParentWidth(ref.current?.clientWidth);
+      }
+    });
 
-  const calculatedHeight = useMemo(() => {
-    return calculatedWidth / VIDEO_ASPECT_RATIO;
-  }, [calculatedWidth]);
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, []);
+
+  const applyMargin = (size: number) => {
+    return size * 0.9;
+  };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} ref={ref}>
       <div>
         <iframe
-          width={calculatedWidth}
-          height={calculatedHeight}
+          width={applyMargin(parentWidth)}
+          height={applyMargin(parentWidth / VIDEO_ASPECT_RATIO)}
           title={title}
           frameBorder={0}
           src={`https://www.youtube.com/embed/${videoId}`}
