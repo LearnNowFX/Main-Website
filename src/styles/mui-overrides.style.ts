@@ -26,5 +26,22 @@ export const MUI_OVERRIDES = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: theme.palette.typography.main,
+          borderRadius: "0",
+          fontSize: "16px",
+          backgroundImage: "linear-gradient(180deg,#296ad4,#1656c1,#0343ae)",
+          "&:hover": {
+            backgroundImage: "linear-gradient(180deg,#0343ae,#1656c1,#296ad4)",
+          },
+          "&:disabled": {
+            opacity: 0.5,
+            color: theme.palette.typography.main,
+          },
+        },
+      },
+    },
   },
 });
