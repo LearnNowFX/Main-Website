@@ -19,13 +19,7 @@ const Tutorials = () => {
       <Grid container spacing={3} style={styles.gridContainer}>
         {videos.map(video => (
           <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={video.id} style={styles.gridItem}>
-            <YouTubePlayer
-              key={video.id}
-              width={400}
-              height={250}
-              videoId={video.id}
-              title={video.title}
-            />
+            <YouTubePlayer key={video.id} width={400} videoId={video.id} title={video.title} />
           </Grid>
         ))}
       </Grid>
