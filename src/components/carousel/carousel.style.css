@@ -1,5 +1,6 @@
 .swiper {
-  width: 50%;
+  height: 50vmin;
+  aspect-ratio: 16/9;
 }
 
 .swiper-slide {

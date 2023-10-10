@@ -4,9 +4,9 @@ import "swiper/css/pagination";
 import "./carousel.style.css";
 
 import React, { FC } from "react";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IFeaturedItem } from "src/interfaces/featured-item.interface";
-import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 
 interface ICarouselProps {
   items: IFeaturedItem[];
@@ -16,14 +16,10 @@ const Carousel: FC<ICarouselProps> = ({ items }) => {
   return (
     <Swiper
       cssMode={true}
-      navigation={true}
-      pagination={true}
-      mousewheel={true}
       loop={true}
-      keyboard={true}
-      autoplay={{ delay: 10000 }}
-      modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
-      className="mySwiper">
+      autoplay={{ delay: 5000 }}
+      modules={[Autoplay]}
+      className="home-carousel">
       {items.map(item => {
         return (
           <SwiperSlide key={item.label}>
