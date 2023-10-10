@@ -14,7 +14,7 @@ const DesktopNavigator = () => {
   };
 
   const activePage = useMemo(() => {
-    return PAGES.find(page => location.pathname.includes(page)) || null;
+    return PAGES.find(page => location.pathname.includes(page)) || PAGES[0];
   }, [location]);
 
   return (

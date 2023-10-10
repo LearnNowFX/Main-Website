@@ -17,7 +17,7 @@ export const useStyles = () =>
       height: "40px",
       color: isActive ? theme.palette.typography.active : theme.palette.typography.main,
       background: "linear-gradient(180deg,#181b1e,#262b33)",
-      borderWidth: "2px",
+      borderWidth: "2px ",
       borderStyle: "solid",
       borderImage: isActive
         ? "linear-gradient(90deg,transparent,#064faa,transparent) 1"

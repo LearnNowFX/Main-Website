@@ -1,15 +1,17 @@
 import React, { FC } from "react";
-import { Button, Typography } from "@mui/material";
 import { useStyles } from "./product.style";
-import { useSearchParams } from "react-router-dom";
+import { Button, Typography } from "@mui/material";
 import { IProduct } from "src/interfaces/product.interface";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 interface IProductProps {
   product: IProduct;
+  basic?: boolean;
 }
 
-const Product: FC<IProductProps> = ({ product }) => {
+const Product: FC<IProductProps> = ({ product, basic }) => {
   const styles = useStyles();
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleProductClick = () => {
@@ -23,12 +25,19 @@ const Product: FC<IProductProps> = ({ product }) => {
   };
 
   const handleProductActionClick = () => {
+    if (basic) {
+      navigate(`/products?product=${product.permalink}`);
+      return;
+    }
+
     window.open(product.url, "_blank");
   };
 
   const image = `${import.meta.env.VITE_STATIC_ASSETS_SERVER}/thumbnails/${product.permalink}.webp`;
 
-  const cost = product.free ? "FREE DOWNLOAD" : `BUY NOW ${product.formatted_price}`;
+  const COST_TEXT = product.free ? "FREE DOWNLOAD" : `BUY NOW ${product.formatted_price}`;
+
+  const BUTTON_TEXT = basic ? "LEARN MORE" : COST_TEXT;
 
   return (
     <div style={styles.container}>
@@ -39,7 +48,7 @@ const Product: FC<IProductProps> = ({ product }) => {
         </Typography>
 
         <Button style={styles.action} onClick={handleProductActionClick}>
-          <Typography style={styles.cost}>{cost}</Typography>
+          <Typography style={styles.cost}>{BUTTON_TEXT}</Typography>
         </Button>
       </div>
     </div>
