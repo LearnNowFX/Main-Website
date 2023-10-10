@@ -4,7 +4,8 @@ import { theme } from "src/styles/theme";
 export const useStyles = () =>
   createStyles({
     container: {
-      height: "400px",
+      maxHeight: "400px",
+      padding: "20px 0px",
       width: "80%",
       display: "flex",
       flexDirection: "column",
@@ -13,16 +14,29 @@ export const useStyles = () =>
       border: `1px solid ${theme.palette.border.main}`,
       borderRadius: "20px",
     },
-    titleContainer: {
+    actionsContainer: {
+      marginTop: "10px",
+      width: "80%",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       alignItems: "flex-start",
     },
     title: {
-      margin: "10px",
       fontSize: "16px",
       fontWeight: 400,
-      width: "60%",
-      textAlign: "center",
+      width: "80%",
+      textAlign: "left",
+    },
+    videoPlayer: {
+      padding: "10px",
+    },
+    playButton: {
+      padding: "8px",
+      marginRight: "10px",
+      borderRadius: 0,
+      backgroundImage: "linear-gradient(180deg,#296ad4,#1656c1,#0343ae)",
+    },
+    playIcon: {
+      color: theme.palette.typography.main,
     },
   });

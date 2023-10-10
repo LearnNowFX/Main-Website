@@ -1,51 +1,72 @@
-import { Typography } from "@mui/material";
+import { FC, useState } from "react";
+import { PlayArrow } from "@mui/icons-material";
 import { useStyles } from "./youtube-player.style";
-import { FC, useEffect, useRef, useState } from "react";
+import { useDeviceContext } from "src/context/device.context";
+import { Dialog, IconButton, Typography } from "@mui/material";
 import { VIDEO_ASPECT_RATIO } from "src/constants/media.constants";
 
 interface IYouTubePlayerProps {
-  width: number;
   videoId: string;
-  title?: string;
+  title: string;
 }
 
-const YouTubePlayer: FC<IYouTubePlayerProps> = ({ width, videoId, title }) => {
+const applyMargin = (size: number) => {
+  return size * 0.7;
+};
+
+const formatTitle = (title: string) => {
+  if (title.length > 60) {
+    return title.substring(0, 60) + "...";
+  }
+
+  return title;
+};
+
+const YouTubePlayer: FC<IYouTubePlayerProps> = ({ videoId, title }) => {
   const styles = useStyles();
-  const ref = useRef<HTMLDivElement>(null);
-  const [parentWidth, setParentWidth] = useState(0);
+  const { width } = useDeviceContext();
+  const [popupOpen, setPopupOpen] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (ref.current?.clientWidth) {
-        setParentWidth(ref.current?.clientWidth);
-      }
-    });
+  const handleOpenPopup = () => {
+    setPopupOpen(true);
+  };
 
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
-  }, []);
-
-  const applyMargin = (size: number) => {
-    return size * 0.9;
+  const handleClosePopup = () => {
+    setPopupOpen(false);
   };
 
   return (
-    <div style={styles.container} ref={ref}>
-      <div>
-        <iframe
-          width={applyMargin(parentWidth)}
-          height={applyMargin(parentWidth / VIDEO_ASPECT_RATIO)}
-          title={title}
-          frameBorder={0}
-          src={`https://www.youtube.com/embed/${videoId}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen></iframe>
+    <>
+      <div style={styles.container}>
+        <img
+          onClick={handleOpenPopup}
+          src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+          style={{ width: "80%", aspectRatio: VIDEO_ASPECT_RATIO, cursor: "pointer" }}
+        />
+        <div style={styles.actionsContainer}>
+          <IconButton style={styles.playButton} onClick={handleOpenPopup}>
+            <PlayArrow style={styles.playIcon} />
+          </IconButton>
+          <Typography style={styles.title} onClick={handleOpenPopup}>
+            {formatTitle(title)}
+          </Typography>
+        </div>
       </div>
-      <div style={styles.titleContainer}>
-        <Typography style={styles.title}>{title}</Typography>
-      </div>
-    </div>
+      {popupOpen && (
+        <Dialog open={popupOpen} onClose={handleClosePopup} maxWidth="lg">
+          <div style={styles.videoPlayer}>
+            <iframe
+              width={applyMargin(width)}
+              height={applyMargin(width / VIDEO_ASPECT_RATIO)}
+              title={title}
+              frameBorder={0}
+              src={`https://www.youtube.com/embed/${videoId}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen></iframe>
+          </div>
+        </Dialog>
+      )}
+    </>
   );
 };
 
