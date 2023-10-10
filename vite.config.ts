@@ -1,6 +1,8 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { PAGES } from "./src/constants/pages.constants";
+import { SiteMapGenerator } from "./plugins/sitemap-generator.plugin";
 
 export default defineConfig(() => {
   return {
@@ -29,6 +31,7 @@ export default defineConfig(() => {
           plugins: ["@emotion/babel-plugin"],
         },
       }),
+      SiteMapGenerator.generate("https://www.learnnowfx.com", PAGES),
     ],
   };
 });

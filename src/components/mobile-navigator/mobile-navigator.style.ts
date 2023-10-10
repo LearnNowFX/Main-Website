@@ -14,11 +14,12 @@ export const useStyles = () =>
       margin: "20px",
     },
     drawer: {
+      border: `3px solid ${theme.palette.border.main}`,
       borderTopLeftRadius: "25px",
       borderTopRightRadius: "25px",
       width: "100%",
       minHeight: "200px",
-      boxShadow: "",
+      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",

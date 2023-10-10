@@ -1,5 +1,5 @@
 .swiper {
-  width: 50vw;
+  width: 50%;
 }
 
 .swiper-slide {
@@ -10,7 +10,7 @@
 }
 
 .swiper-slide img {
-  height: 200px;
+  width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
