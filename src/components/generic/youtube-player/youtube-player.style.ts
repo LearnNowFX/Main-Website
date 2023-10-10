@@ -26,6 +26,8 @@ export const useStyles = () =>
       fontWeight: 400,
       width: "80%",
       textAlign: "left",
+      height: "100%",
+      lineHeight: 1.1,
     },
     dialog: {
       backgroundColor: "rgba(255, 255, 255, 0.25)",
@@ -38,8 +40,8 @@ export const useStyles = () =>
       padding: "20px",
     },
     playButton: {
-      padding: "8px",
-      marginRight: "10px",
+      padding: "5px",
+      marginRight: "15px",
       borderRadius: 0,
       backgroundImage: "linear-gradient(180deg,#296ad4,#1656c1,#0343ae)",
     },

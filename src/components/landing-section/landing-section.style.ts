@@ -14,6 +14,7 @@ export const useStyles = () =>
       marginTop: "-250px",
       maxWidth: "70vw",
       position: "absolute",
+      display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
