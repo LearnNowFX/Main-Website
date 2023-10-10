@@ -1,9 +1,9 @@
 import React from "react";
 import { useStyles } from "./header.style";
+import { useNavigate } from "react-router-dom";
 import { useDeviceContext } from "src/context/device.context";
 import MobileNavigator from "../mobile-navigator/mobile-navigator";
 import DesktopNavigator from "../desktop-navigator/desktop-navigator";
-import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const styles = useStyles();
