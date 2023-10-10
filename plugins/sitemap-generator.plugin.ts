@@ -38,7 +38,11 @@ export class SiteMapGenerator {
                 ${XML_TAGS.URLSET_CLOSE}`;
   }
 
-  public static generate(domain: string, routes: string[]) {
+  public static generate(domain: string | undefined, routes: string[]) {
+    if (!domain) {
+      return [];
+    }
+
     const urls = routes.map(route => {
       return this.generateUrl(domain, route);
     });
