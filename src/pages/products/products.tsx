@@ -19,7 +19,10 @@ const Products = () => {
   const selectedProduct = useMemo(() => {
     const productId = params.get("product");
 
-    return products?.find(product => product.permalink === productId) || null;
+    return (
+      products?.find(product => product?.permalink?.toLowerCase() === productId?.toLowerCase()) ||
+      null
+    );
   }, [params, products]);
 
   return (

@@ -11,6 +11,7 @@ export const useStyles = () =>
       justifyContent: "center",
     },
     info: {
+      marginTop: "-250px",
       maxWidth: "70vw",
       position: "absolute",
       flexDirection: "column",
