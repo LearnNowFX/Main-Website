@@ -53,7 +53,11 @@ const YouTubePlayer: FC<IYouTubePlayerProps> = ({ videoId, title }) => {
         </div>
       </div>
       {popupOpen && (
-        <Dialog open={popupOpen} onClose={handleClosePopup} maxWidth="lg">
+        <Dialog
+          open={popupOpen}
+          onClose={handleClosePopup}
+          maxWidth="lg"
+          PaperProps={{ style: styles.dialog }}>
           <div style={styles.videoPlayer}>
             <iframe
               width={applyMargin(width)}

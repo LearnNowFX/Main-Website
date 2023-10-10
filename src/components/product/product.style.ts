@@ -27,14 +27,14 @@ export const useStyles = () =>
     title: {
       fontSize: "16px",
       fontWeight: 400,
-      width: "60%",
+      width: "50%",
       textAlign: "left",
     },
     info: {
       marginTop: "10px",
       width: "100%",
       display: "flex",
-      alignItems: "center",
+      alignItems: "flex-start",
       justifyContent: "space-between",
     },
     action: {

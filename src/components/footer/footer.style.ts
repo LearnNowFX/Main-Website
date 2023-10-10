@@ -17,13 +17,13 @@ export const useStyles = () =>
     },
     logoContainer: {
       padding: "10px",
-      width: "350px",
+      width: "min(350px, 100vw)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
     },
     textContainer: {
-      width: "350px",
+      width: "min(350px, 100vw)",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -41,6 +41,6 @@ export const useStyles = () =>
     },
     socialContainer: {
       padding: "15px",
-      width: "300px",
+      width: "min(300px, 100vw)",
     },
   });

@@ -27,8 +27,15 @@ export const useStyles = () =>
       width: "80%",
       textAlign: "left",
     },
+    dialog: {
+      backgroundColor: "rgba(255, 255, 255, 0.25)",
+      backdropFilter: "blur(10px)",
+      boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+      borderRadius: "10px",
+      border: "1px solid rgba(255, 255, 255, 0.18)",
+    },
     videoPlayer: {
-      padding: "10px",
+      padding: "20px",
     },
     playButton: {
       padding: "8px",

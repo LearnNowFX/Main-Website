@@ -28,7 +28,7 @@ const Product: FC<IProductProps> = ({ product }) => {
 
   const image = `${import.meta.env.VITE_STATIC_ASSETS_SERVER}/thumbnails/${product.permalink}.webp`;
 
-  const cost = product.free ? "DOWNLOAD FOR FREE" : `BUY NOW ${product.formatted_price}`;
+  const cost = product.free ? "FREE DOWNLOAD" : `BUY NOW ${product.formatted_price}`;
 
   return (
     <div style={styles.container}>
