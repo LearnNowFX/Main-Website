@@ -4,13 +4,13 @@ import { createStyles } from "../../styles/create-styles";
 export const useStyles = () =>
   createStyles({
     container: {
+      borderTop: `1px solid ${theme.palette.border.main}`,
+      marginTop: "auto",
       display: "flex",
       flexWrap: "wrap",
       justifyContent: "space-around",
       flexDirection: "row",
-      position: "fixed",
-      bottom: 0,
-      width: "100vw",
+      maxWidth: "100vw",
       minHeight: "100px",
       padding: "10px",
       backgroundColor: theme.palette.footer.main,

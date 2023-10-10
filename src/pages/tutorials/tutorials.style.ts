@@ -12,6 +12,7 @@ export const useStyles = () =>
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "flex-start",
+      paddingBottom: "100px",
     },
     title: {
       fontSize: "35px",
@@ -20,7 +21,6 @@ export const useStyles = () =>
       margin: "50px 0",
     },
     gridContainer: {
-      paddingBottom: "350px",
       width: "100%",
       height: "100%",
     },

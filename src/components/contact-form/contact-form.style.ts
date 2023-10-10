@@ -9,8 +9,8 @@ export const useStyles = () =>
       flexDirection: "column",
       alignItems: "flex-start",
       justifyContent: "center",
-      margin: theme.margin(50),
-      marginBottom: theme.margin(300),
+      margin: "5vw",
+      marginBottom: theme.margin(100),
     },
     input: {
       margin: theme.margin(5),

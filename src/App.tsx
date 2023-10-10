@@ -1,3 +1,4 @@
+import { useStyles } from "./app.style";
 import { ROUTES } from "./routes/routes";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
@@ -6,8 +7,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 const CLIENT_URL = import.meta.env.DOMAIN_URL;
 
 function App() {
+  const styles = useStyles();
+
   return (
-    <>
+    <div style={styles.container}>
       <BrowserRouter basename={CLIENT_URL}>
         <Header />
         <Routes>
@@ -17,7 +20,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

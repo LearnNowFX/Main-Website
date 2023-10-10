@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useStyles } from "./contact-form.style";
 import { useContactForm } from "./contact-form.hook";
