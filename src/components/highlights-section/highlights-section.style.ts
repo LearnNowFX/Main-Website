@@ -36,7 +36,7 @@ export const useStyles = () =>
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "flex-start",
-      // padding: theme.padding(50),
+      padding: theme.padding(20),
       boxSizing: "border-box",
     },
     carouselContainer: {
