@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
 
     const premium = products.filter(product => !product.free);
 
-    return premium.slice(0, 4);
+    return premium.slice(0, 6);
   }, [products]);
 
   return (
@@ -27,7 +27,7 @@ const FeaturedProducts = () => {
       <Typography style={styles.title}>FEATURED PRODUCTS</Typography>
       <Grid container spacing={3} style={styles.gridContainer}>
         {featuredProducts?.map(product => (
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={product.id} style={styles.gridItem}>
+          <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={product.id} style={styles.gridItem}>
             <Product key={product.id} product={product} basic={true} />
           </Grid>
         ))}

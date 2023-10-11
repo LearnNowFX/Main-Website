@@ -21,7 +21,7 @@ const FeaturedTutorials = () => {
       return null;
     }
 
-    return tutorials.slice(0, 4);
+    return tutorials.slice(0, 6);
   }, [tutorials]);
 
   return (
@@ -29,7 +29,7 @@ const FeaturedTutorials = () => {
       <Typography style={styles.title}>FEATURED TUTORIALS</Typography>
       <Grid container spacing={3} style={styles.gridContainer}>
         {featuredTutorials?.map(tutorial => (
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={tutorial.id} style={styles.gridItem}>
+          <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={tutorial.id} style={styles.gridItem}>
             <YouTubePlayer key={tutorial.id} videoId={tutorial.id} title={tutorial.title} />
           </Grid>
         ))}
