@@ -14,6 +14,7 @@ export const theme = {
     },
     paper: {},
     button: {
+      main: "#262626",
       icon: "#515151",
     },
     icon: {
