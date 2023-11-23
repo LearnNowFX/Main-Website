@@ -6,7 +6,7 @@ import { Button, InputLabel, TextField, Typography } from "@mui/material";
 
 const ContactForm = () => {
   const styles = useStyles();
-  const { form, isValid, captchaRef, handleSubmit, handleChange, handleCaptchaChange } =
+  const { form, errors, isValid, captchaRef, handleSubmit, handleChange, handleCaptchaChange } =
     useContactForm();
 
   return (
@@ -21,6 +21,8 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form?.firstName || ""}
           style={styles.input}
+          helperText={errors?.firstName}
+          error={Boolean(errors?.firstName)}
         />
         <TextField
           required
@@ -29,6 +31,8 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form?.lastName || ""}
           style={styles.input}
+          helperText={errors?.lastName}
+          error={Boolean(errors?.lastName)}
         />
       </div>
       <div>
@@ -40,6 +44,8 @@ const ContactForm = () => {
           style={styles.input}
           onChange={handleChange}
           value={form?.email || ""}
+          helperText={errors?.email}
+          error={Boolean(errors?.email)}
         />
       </div>
       <div>
@@ -53,6 +59,8 @@ const ContactForm = () => {
           style={styles.input}
           onChange={handleChange}
           value={form?.message || ""}
+          helperText={errors?.message}
+          error={Boolean(errors?.message)}
         />
       </div>
       <div style={styles.captcha}>

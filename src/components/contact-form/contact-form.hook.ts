@@ -1,5 +1,5 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { contactService } from "src/services/contact.service";
 import { IContactForm } from "src/interfaces/contact-form.interface";
 
@@ -7,6 +7,7 @@ export const useContactForm = () => {
   const captchaRef = useRef<ReCAPTCHA>(null);
   const [captchaChecked, setCaptchaChecked] = useState(false);
   const [form, setForm] = useState<Partial<IContactForm>>({});
+  const [errors, setErrors] = useState<Partial<IContactForm>>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({
@@ -18,6 +19,15 @@ export const useContactForm = () => {
   const handleCaptchaChange = () => {
     setCaptchaChecked(true);
   };
+
+  useEffect(() => {
+    setErrors({
+      email: !form.email ? "Email is required" : "",
+      firstName: !form.firstName ? "First name is required" : "",
+      lastName: !form.lastName ? "Last name is required" : "",
+      message: !form.message ? "Message is required" : "",
+    });
+  }, [form]);
 
   const isValid = useMemo(() => {
     return form.firstName && form.lastName && form.email && form.message && captchaChecked;
@@ -37,6 +47,7 @@ export const useContactForm = () => {
 
   return {
     form,
+    errors,
     isValid,
     captchaRef,
     handleSubmit,
